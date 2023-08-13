@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</style>
 	</head>
 	<body>
-		<div class="border rounded mx-auto mt-3" style="max-width: 600px">
+		<div class="border rounded mx-auto m-3" style="max-width: 600px; min-width: 450px;">
 			<div class="d-flex align-items-center gap-3 border-bottom mx-3 py-3">
 				<div>
 					<a class="btn btn-dark btn-sm rounded-circle cr-default" href="http://localhost/lunagabriel20230812/users">

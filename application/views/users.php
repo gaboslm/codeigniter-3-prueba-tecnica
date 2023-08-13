@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 	</style>
 	<body>
-		<div class="border rounded mx-auto mt-3 pt-2" style="max-width: 900px">
+		<div class="border rounded mx-auto mt-3 pt-2" style="max-width: 1200px; min-width: 930px">
 			<div class="d-flex align-items-center justify-content-between px-3">
 				<h1 style="font-size: 1.8rem">List of users</h1>
 				<div>
@@ -82,7 +82,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								echo "<td>Other</td>";
 							}
 							echo "<td>".$user->TELEPHONE."</td>";
-							echo "<td>".$user->AGE."</td>";
+							echo "<td>".$user->AGE." (".(date('Y') - date('Y', strtotime($user->AGE)))." years old)</td>";
 							echo "<td><div class='cr-pointer'><span onclick='editUser($user->ID)' class='icon icon-edit mdi mdi-pen text-dark' style='font-size: 20px'></span></div></td>";
 							echo "<td><span onclick='removeUser($user->ID)' class='icon icon-delete mdi mdi-delete-empty text-dark cr-pointer' style='font-size: 20px'></span></td>";
 							echo "</tr>";
@@ -137,6 +137,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 			function editUser(id){
 				window.location.href = `http://localhost/lunagabriel20230812/user_edit?id=${id}`
+			}
+
+			function calculateAge(date) {
+				const birthdate = new Date(date);
+				var monthDiff = Date.now() - birthdate.getTime();
+				var age_d = new Date(monthDiff);
+				var year = age_d.getUTCFullYear();
+				var age = Math.abs(year - 1970);
+				return `(${age})`;
 			}
 		</script>
 	</body>
