@@ -56,4 +56,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['register']['GET'] = 'Usercrud/register_view';
 $route['register']['POST'] = 'Usercrud/register';
 $route['users']['GET'] = 'Usercrud/users_view';
+$route['user_edit']['GET'] = 'Usercrud/edit_view';
+$route['user_edit']['POST'] = 'Usercrud/update';
+$route['user_delete']['DELETE'] = 'Usercrud/delete';
 
